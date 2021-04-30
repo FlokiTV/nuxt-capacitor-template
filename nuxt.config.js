@@ -40,6 +40,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
+    '@nuxtjs/pwa',
     '@nuxtjs/axios',
   ],
 
@@ -48,5 +49,17 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  pwa: {
+    manifest: {
+      name: 'Nuxt Capacitor Boilerplate',
+      short_name: 'Nuxt App',
+      lang: 'en',
+      useWebmanifestExtension: false,
+      start_url: '/'
+    },
+    meta: {
+      theme_color: '#00FF00'
+    }
   }
 }
