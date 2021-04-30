@@ -49,7 +49,15 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    publicPath: '/assets/',
+    extend(config, { isDev, isClient }) {
+      if (!isDev) {
+        config.output.publicPath = './assets/'
+      }
+      return config
+    }
   },
+  
   pwa: {
     manifest: {
       name: 'Nuxt Capacitor Boilerplate',

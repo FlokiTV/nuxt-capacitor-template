@@ -6,7 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "build-android": "nuxt build && nuxt generate && npx cap copy android && cd android && ./gradlew assembleDebug && cd .."
   },
   "dependencies": {
     "@capacitor/android": "^2.4.7",
