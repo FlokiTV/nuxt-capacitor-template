@@ -7,6 +7,7 @@
 export default {
   created() {
     if (process.browser) {
+      console.log("Browser")
       // eslint-disable-next-line nuxt/no-globals-in-created
       window.addEventListener('beforeinstallprompt', (e) => {
         // Prevent the mini-infobar from appearing on mobile
@@ -21,6 +22,8 @@ export default {
         this.$store.commit('checkInstallAvailable', false)
         this.$toast.show('App is installed!')
       })
+    }else{
+      console.log("Not a browser")
     }
   }
 }

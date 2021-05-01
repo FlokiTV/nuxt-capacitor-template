@@ -6,6 +6,7 @@
         nuxt-capacitor
       </h1>
       <div class="links"> {{networkStatus}} </div>
+      <button @click="installApp">Install</button>
     </div>
   </div>
 </template>
@@ -33,6 +34,18 @@ export default {
     showToast() {
       this.$toast.show({ text: 'I am a toast!' })
     },
+    installApp() {
+      // Show the install promp()
+      this.$store.state.deferredPrompt.prompt()
+      // Wait for the user to respond to the prompt
+      this.$store.state.deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          this.$toast.show('Installation started!')
+        } else {
+          this.$toast.show('Installation canceled!')
+        }
+      })
+    }
   }
 }
 </script>
