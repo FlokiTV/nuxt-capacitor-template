@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'For You - JAM9',
+    title: 'nuxt-capacitor-template',
     htmlAttrs: {
       lang: 'en'
     },
@@ -60,7 +60,7 @@ export default {
   
   pwa: {
     manifest: {
-      name: 'Nuxt Capacitor Boilerplate',
+      name: 'Nuxt Capacitor Template',
       short_name: 'Nuxt App',
       lang: 'en',
       useWebmanifestExtension: false,
